@@ -1,0 +1,61 @@
+// =====================================================================
+//  MASSAGE ROUTINE — editable data file
+//  Edit this file to change the cheat sheet, then save & refresh the page.
+//
+//  FORMAT
+//    // line ............ comment, ignored
+//    # Name | duration .. a POSITION (e.g. Prone) shown as a big header
+//    ## Name | time ..... a REGION card with a time badge
+//    Label: a, b, c ..... a labeled GROUP of strokes inside that region
+//    a, b, c ............ ungrouped strokes (a bare line, no "Label:")
+//
+//  Strokes are separated by commas. Mark a single stroke with:
+//    *  ->  highlighted "key move / transition" pill   (e.g. *stretch)
+//    ~  ->  dashed "repeat" pill                        (e.g. ~specific x2)
+//
+//  Put "(notes)" in a region name to show them small & grey.
+//  A region with 3+ groups automatically becomes a full-width card.
+// =====================================================================
+
+
+# Prone | 30 min
+
+## Foot | 3 min · ×2
+heel circ ulnar eff, alt squeeze eff, knuckle eff, x-fiber, ball deep friction, thrusting knuckle, 5th metatarsal, *stretch
+
+## Leg (general) | 4 min · ×2
+Lower: gastroc, open C, ocean waves, eff
+Upper: forearm eff, knuckles, ocean waves, eff
+
+## Glute | 1.5 min · ×2
+IT band, iliac crest small cir, alt knuckle compression, forearm comp w/ rotation
+
+## Back | 15 min
+General: alt compression on shoulders, ulnar eff, butterfly eff
+Specific: pivot, ribcage pull, pivot, eff
+Specific — Hand: eff w/ pull, x-fiber, spreading, twisting knuckle, deep friction
+Specific — To Steel: low, lateral palm eff, V's, petrissage, spread circ, QL
+Specific — To Back: ulnar eff scapula, scapular work, *return hand
+Close: ~specific ×2, general
+
+
+# Supine | 30 min
+
+## Foot | 1 min · ×2
+eff, bend toes + chucking, eff w/ toe twist, ankle circle
+
+## Leg | 3 min · ×2
+eff
+Lower: gastroc, above & below, dragon mouth, palm hstn, t-fan, pulling, eff
+Upper: adductor, knuckles, pulling, ocean waves, eff
+
+## Arm + Hand | 3 min · ×2
+Open: eff, hand friction, alt eff w/ twist
+Lower: x-fiber forearm, turnover, petrissage, return arm
+Supporting Arm: *pivot to supporting arm, eff oval, strip elbow, knuckle eff, petrissage
+Close: *return arm, eff full arm
+
+## Neck + Shoulder | ~3 min
+General: alt compression, clavicle, reverse butterfly
+Specific: *turn head, eff SCM, soft knuckles, petrissage, eff
+Close: *transition, nose butterfly, ~specific ×2, reverse butterfly

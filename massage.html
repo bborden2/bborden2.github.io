@@ -112,6 +112,11 @@
       font-size: 1.12rem;
       letter-spacing: -0.01em;
     }
+    .card-head h3 .note {
+      font-weight: 400;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
     .time-badge {
       flex: none;
       font-size: 0.78rem;
@@ -126,7 +131,7 @@
 
     /* ---- Sub-groups inside a card ---- */
     .group { margin-top: 14px; }
-    .group:first-of-type { margin-top: 0; }
+    .group:first-child { margin-top: 0; }
     .group-label {
       font-size: 0.72rem;
       font-weight: 700;
@@ -205,6 +210,24 @@
     .swatch.supine { background: var(--supine-soft); border-color: var(--supine); }
     .swatch.key    { background: #fff; border-color: var(--accent); }
 
+    /* ---- Load / error states ---- */
+    .notice {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-top: 24px;
+      color: var(--ink);
+    }
+    .notice code {
+      background: var(--pill);
+      border: 1px solid var(--pill-line);
+      border-radius: 5px;
+      padding: 1px 5px;
+      font-size: 0.9em;
+    }
+
     @media print {
       body { background: #fff; }
       .card { box-shadow: none; break-inside: avoid; }
@@ -223,295 +246,139 @@
         <span><span class="swatch prone"></span> Prone</span>
         <span><span class="swatch supine"></span> Supine</span>
         <span><span class="swatch key"></span> Key move / transition</span>
-        <span>&nbsp;⟳ ×2 = repeat each side</span>
+        <span>&nbsp;×2 = repeat each side</span>
       </div>
     </header>
 
-    <!-- ============== PRONE ============== -->
-    <section class="position prone">
-      <div class="position-head">
-        <h2>Prone</h2>
-        <span class="dur">30 min</span>
-      </div>
-
-      <div class="regions">
-
-        <!-- Foot -->
-        <div class="card">
-          <div class="card-head">
-            <h3>Foot</h3>
-            <span class="time-badge">3 min · ×2</span>
-          </div>
-          <ul class="strokes">
-            <li>heel circ ulnar eff</li>
-            <li>alt squeeze eff</li>
-            <li>knuckle eff</li>
-            <li>x-fiber</li>
-            <li>ball deep friction</li>
-            <li>thrusting knuckle</li>
-            <li>5th metatarsal</li>
-            <li class="key">stretch</li>
-          </ul>
-        </div>
-
-        <!-- Leg -->
-        <div class="card">
-          <div class="card-head">
-            <h3>Leg <span style="font-weight:400;color:var(--muted);font-size:0.85rem;">(general)</span></h3>
-            <span class="time-badge">4 min · ×2</span>
-          </div>
-          <div class="group">
-            <div class="group-label">Lower</div>
-            <ul class="strokes">
-              <li>gastroc</li>
-              <li>open C</li>
-              <li>ocean waves</li>
-              <li>eff</li>
-            </ul>
-          </div>
-          <div class="group">
-            <div class="group-label">Upper</div>
-            <ul class="strokes">
-              <li>forearm eff</li>
-              <li>knuckles</li>
-              <li>ocean waves</li>
-              <li>eff</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Glute -->
-        <div class="card">
-          <div class="card-head">
-            <h3>Glute</h3>
-            <span class="time-badge">1.5 min · ×2</span>
-          </div>
-          <ul class="strokes">
-            <li>IT band</li>
-            <li>iliac crest small cir</li>
-            <li>alt knuckle compression</li>
-            <li>forearm comp w/ rotation</li>
-          </ul>
-        </div>
-
-        <!-- Back (wide) -->
-        <div class="card wide">
-          <div class="card-head">
-            <h3>Back</h3>
-            <span class="time-badge">15 min</span>
-          </div>
-
-          <div class="group">
-            <div class="group-label">General</div>
-            <ul class="strokes">
-              <li>alt compression on shoulders</li>
-              <li>ulnar eff</li>
-              <li>butterfly eff</li>
-            </ul>
-          </div>
-
-          <div class="group">
-            <div class="group-label">Specific</div>
-            <ul class="strokes">
-              <li>pivot</li>
-              <li>ribcage pull</li>
-              <li>pivot</li>
-              <li>eff</li>
-            </ul>
-          </div>
-
-          <div class="group">
-            <div class="group-label">Specific — Hand</div>
-            <ul class="strokes">
-              <li>eff w/ pull</li>
-              <li>x-fiber</li>
-              <li>spreading</li>
-              <li>twisting knuckle</li>
-              <li>deep friction</li>
-            </ul>
-          </div>
-
-          <div class="group">
-            <div class="group-label">Specific — To Steel</div>
-            <ul class="strokes">
-              <li>low</li>
-              <li>lateral palm eff</li>
-              <li>V's</li>
-              <li>petrissage</li>
-              <li>spread circ</li>
-              <li>QL</li>
-            </ul>
-          </div>
-
-          <div class="group">
-            <div class="group-label">Specific — To Back</div>
-            <ul class="strokes">
-              <li>ulnar eff scapula</li>
-              <li>scapular work</li>
-              <li class="key">return hand</li>
-            </ul>
-          </div>
-
-          <div class="group">
-            <div class="group-label">Close</div>
-            <ul class="strokes">
-              <li class="rep">specific ×2</li>
-              <li>general</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============== SUPINE ============== -->
-    <section class="position supine">
-      <div class="position-head">
-        <h2>Supine</h2>
-        <span class="dur">30 min</span>
-      </div>
-
-      <div class="regions">
-
-        <!-- Foot -->
-        <div class="card">
-          <div class="card-head">
-            <h3>Foot</h3>
-            <span class="time-badge">1 min · ×2</span>
-          </div>
-          <ul class="strokes">
-            <li>eff</li>
-            <li>bend toes + chucking</li>
-            <li>eff w/ toe twist</li>
-            <li>ankle circle</li>
-          </ul>
-        </div>
-
-        <!-- Leg -->
-        <div class="card">
-          <div class="card-head">
-            <h3>Leg</h3>
-            <span class="time-badge">3 min · ×2</span>
-          </div>
-          <ul class="strokes" style="margin-bottom:4px;">
-            <li>eff</li>
-          </ul>
-          <div class="group">
-            <div class="group-label">Lower</div>
-            <ul class="strokes">
-              <li>gastroc</li>
-              <li>above &amp; below</li>
-              <li>dragon mouth</li>
-              <li>palm hstn</li>
-              <li>t-fan</li>
-              <li>pulling</li>
-              <li>eff</li>
-            </ul>
-          </div>
-          <div class="group">
-            <div class="group-label">Upper</div>
-            <ul class="strokes">
-              <li>adductor</li>
-              <li>knuckles</li>
-              <li>pulling</li>
-              <li>ocean waves</li>
-              <li>eff</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Arm + Hand (wide) -->
-        <div class="card wide">
-          <div class="card-head">
-            <h3>Arm + Hand</h3>
-            <span class="time-badge">3 min · ×2</span>
-          </div>
-
-          <div class="group">
-            <div class="group-label">Open</div>
-            <ul class="strokes">
-              <li>eff</li>
-              <li>hand friction</li>
-              <li>alt eff w/ twist</li>
-            </ul>
-          </div>
-
-          <div class="group">
-            <div class="group-label">Lower</div>
-            <ul class="strokes">
-              <li>x-fiber forearm</li>
-              <li>turnover</li>
-              <li>petrissage</li>
-              <li>return arm</li>
-            </ul>
-          </div>
-
-          <div class="group">
-            <div class="group-label">Supporting Arm</div>
-            <ul class="strokes">
-              <li class="key">pivot to supporting arm</li>
-              <li>eff oval</li>
-              <li>strip elbow</li>
-              <li>knuckle eff</li>
-              <li>petrissage</li>
-            </ul>
-          </div>
-
-          <div class="group">
-            <div class="group-label">Close</div>
-            <ul class="strokes">
-              <li class="key">return arm</li>
-              <li>eff full arm</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Neck + Shoulder (wide) -->
-        <div class="card wide">
-          <div class="card-head">
-            <h3>Neck + Shoulder</h3>
-            <span class="time-badge">~3 min</span>
-          </div>
-
-          <div class="group">
-            <div class="group-label">General</div>
-            <ul class="strokes">
-              <li>alt compression</li>
-              <li>clavicle</li>
-              <li>reverse butterfly</li>
-            </ul>
-          </div>
-
-          <div class="group">
-            <div class="group-label">Specific</div>
-            <ul class="strokes">
-              <li class="key">turn head</li>
-              <li>eff SCM</li>
-              <li>soft knuckles</li>
-              <li>petrissage</li>
-              <li>eff</li>
-            </ul>
-          </div>
-
-          <div class="group">
-            <div class="group-label">Close</div>
-            <ul class="strokes">
-              <li class="key">transition</li>
-              <li>nose butterfly</li>
-              <li class="rep">specific ×2</li>
-              <li>reverse butterfly</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </section>
+    <!-- Content is generated from massage-routine.txt -->
+    <div id="routine">
+      <div class="notice">Loading routine…</div>
+    </div>
 
     <footer class="page">
-      Memorization cheat sheet · eff = effleurage · cir = circle · x-fiber = cross-fiber
+      Memorization cheat sheet · eff = effleurage · cir = circle · x-fiber = cross-fiber ·
+      edit <code>massage-routine.txt</code> to change this page
     </footer>
 
   </div>
+
+  <script>
+    // ---- Parse the editable text file into a routine structure ----
+    function parseRoutine(text) {
+      const positions = [];
+      let pos = null, region = null;
+
+      text.split(/\r?\n/).forEach(function (raw) {
+        const t = raw.trim();
+        if (t === '' || t.startsWith('//')) return;
+
+        if (t.startsWith('##')) {                       // region
+          const [name, time] = splitPipe(t.slice(2));
+          region = { name: name, time: time, intro: [], groups: [] };
+          if (pos) pos.regions.push(region);
+        } else if (t.startsWith('#')) {                 // position
+          const [name, dur] = splitPipe(t.slice(1));
+          pos = { name: name, dur: dur, regions: [] };
+          positions.push(pos);
+        } else if (region) {                            // strokes line
+          const ci = t.indexOf(':');
+          if (ci > 0 && t.slice(0, ci).indexOf(',') === -1) {
+            region.groups.push({
+              label: t.slice(0, ci).trim(),
+              strokes: parseStrokes(t.slice(ci + 1))
+            });
+          } else {
+            region.intro = region.intro.concat(parseStrokes(t));
+          }
+        }
+      });
+      return positions;
+    }
+
+    function splitPipe(s) {
+      const i = s.indexOf('|');
+      return i === -1
+        ? [s.trim(), '']
+        : [s.slice(0, i).trim(), s.slice(i + 1).trim()];
+    }
+
+    function parseStrokes(s) {
+      return s.split(',').map(function (raw) {
+        let txt = raw.trim();
+        let type = 'normal';
+        if (txt.startsWith('*')) { type = 'key'; txt = txt.slice(1).trim(); }
+        else if (txt.startsWith('~')) { type = 'rep'; txt = txt.slice(1).trim(); }
+        return { text: txt, type: type };
+      }).filter(function (st) { return st.text !== ''; });
+    }
+
+    // ---- Render ----
+    function esc(s) {
+      return s.replace(/[&<>"]/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+      });
+    }
+
+    function fmtName(name) {
+      // show "(...)" notes small & grey
+      return esc(name).replace(/\(([^)]*)\)/,
+        '<span class="note">($1)</span>');
+    }
+
+    function strokeList(strokes) {
+      if (!strokes.length) return '';
+      const items = strokes.map(function (st) {
+        const cls = st.type === 'key' ? ' class="key"'
+          : st.type === 'rep' ? ' class="rep"' : '';
+        return '<li' + cls + '>' + esc(st.text) + '</li>';
+      }).join('');
+      return '<ul class="strokes">' + items + '</ul>';
+    }
+
+    function renderRegion(r) {
+      const wide = r.groups.length >= 3 ? ' wide' : '';
+      const badge = r.time
+        ? '<span class="time-badge">' + esc(r.time) + '</span>' : '';
+      let body = strokeList(r.intro);
+      r.groups.forEach(function (g) {
+        body += '<div class="group"><div class="group-label">' +
+          esc(g.label) + '</div>' + strokeList(g.strokes) + '</div>';
+      });
+      return '<div class="card' + wide + '">' +
+        '<div class="card-head"><h3>' + fmtName(r.name) + '</h3>' + badge + '</div>' +
+        body + '</div>';
+    }
+
+    function renderRoutine(positions) {
+      return positions.map(function (p, i) {
+        const cls = i % 2 === 0 ? 'prone' : 'supine';
+        const dur = p.dur ? '<span class="dur">' + esc(p.dur) + '</span>' : '';
+        const cards = p.regions.map(renderRegion).join('');
+        return '<section class="position ' + cls + '">' +
+          '<div class="position-head"><h2>' + esc(p.name) + '</h2>' + dur + '</div>' +
+          '<div class="regions">' + cards + '</div></section>';
+      }).join('');
+    }
+
+    // ---- Load the data file ----
+    fetch('massage-routine.txt?v=' + Date.now(), { cache: 'no-store' })
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.text();
+      })
+      .then(function (text) {
+        const positions = parseRoutine(text);
+        document.getElementById('routine').innerHTML = renderRoutine(positions);
+      })
+      .catch(function (err) {
+        document.getElementById('routine').innerHTML =
+          '<div class="notice"><strong>Couldn\'t load <code>massage-routine.txt</code>.</strong><br>' +
+          esc(String(err)) +
+          '<br><br>This page reads the routine from that file over the network, ' +
+          'so view it through the published site (or a local web server) rather than ' +
+          'opening the HTML directly from disk.</div>';
+      });
+  </script>
 </body>
 
 </html>
