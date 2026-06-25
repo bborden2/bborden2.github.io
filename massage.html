@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Massage Routine — Cheat Sheet</title>
+  <style>
+    :root {
+      --bg: #f5f3ee;
+      --card: #ffffff;
+      --ink: #2b2620;
+      --muted: #8a8175;
+      --line: #e7e2d8;
+      --prone: #2f6f6a;
+      --prone-soft: #e2efed;
+      --supine: #8a5a2b;
+      --supine-soft: #f3e8da;
+      --pill: #eef0f2;
+      --pill-ink: #3a4250;
+      --pill-line: #dfe3e8;
+      --accent: #c2553f;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    /* ---- Page header ---- */
+    header.page {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    header.page h1 {
+      margin: 0 0 6px;
+      font-size: 2rem;
+      letter-spacing: -0.02em;
+    }
+    header.page .total {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    header.page .total strong { color: var(--ink); }
+
+    /* ---- Position section ---- */
+    .position {
+      margin-top: 36px;
+    }
+    .position > .position-head {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding-bottom: 10px;
+      margin-bottom: 18px;
+      border-bottom: 3px solid currentColor;
+    }
+    .position.prone  > .position-head { color: var(--prone); }
+    .position.supine > .position-head { color: var(--supine); }
+    .position-head h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+    .position-head .dur {
+      font-size: 0.95rem;
+      font-weight: 600;
+      opacity: 0.85;
+    }
+
+    /* ---- Region cards grid ---- */
+    .regions {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+      align-items: start;
+    }
+    /* let the wide "Back" / big cards span full width */
+    .card.wide { grid-column: 1 / -1; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 18px 18px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03), 0 6px 16px rgba(0,0,0,0.04);
+    }
+    .card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .card-head h3 {
+      margin: 0;
+      font-size: 1.12rem;
+      letter-spacing: -0.01em;
+    }
+    .time-badge {
+      flex: none;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      padding: 4px 9px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .prone  .time-badge { background: var(--prone-soft);  color: var(--prone); }
+    .supine .time-badge { background: var(--supine-soft); color: var(--supine); }
+
+    /* ---- Sub-groups inside a card ---- */
+    .group { margin-top: 14px; }
+    .group:first-of-type { margin-top: 0; }
+    .group-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 7px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .group-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    /* ---- Stroke pills ---- */
+    .strokes {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .strokes li {
+      background: var(--pill);
+      color: var(--pill-ink);
+      border: 1px solid var(--pill-line);
+      border-radius: 999px;
+      padding: 4px 11px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    /* emphasised pills (key moves / transitions) */
+    .strokes li.key {
+      background: #fff;
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 600;
+    }
+    /* repeat / counter notation pill */
+    .strokes li.rep {
+      background: transparent;
+      border-style: dashed;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    footer.page {
+      margin-top: 48px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    /* ---- Legend ---- */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      margin-top: 14px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .swatch {
+      width: 22px; height: 14px; border-radius: 999px; display: inline-block;
+      border: 1px solid var(--pill-line);
+    }
+    .swatch.prone  { background: var(--prone-soft); border-color: var(--prone); }
+    .swatch.supine { background: var(--supine-soft); border-color: var(--supine); }
+    .swatch.key    { background: #fff; border-color: var(--accent); }
+
+    @media print {
+      body { background: #fff; }
+      .card { box-shadow: none; break-inside: avoid; }
+      .position { break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header class="page">
+      <h1>Massage Routine</h1>
+      <div class="total">Full session · <strong>60 min</strong> &nbsp;|&nbsp; Prone 30 · Supine 30</div>
+      <div class="legend">
+        <span><span class="swatch prone"></span> Prone</span>
+        <span><span class="swatch supine"></span> Supine</span>
+        <span><span class="swatch key"></span> Key move / transition</span>
+        <span>&nbsp;⟳ ×2 = repeat each side</span>
+      </div>
+    </header>
+
+    <!-- ============== PRONE ============== -->
+    <section class="position prone">
+      <div class="position-head">
+        <h2>Prone</h2>
+        <span class="dur">30 min</span>
+      </div>
+
+      <div class="regions">
+
+        <!-- Foot -->
+        <div class="card">
+          <div class="card-head">
+            <h3>Foot</h3>
+            <span class="time-badge">3 min · ×2</span>
+          </div>
+          <ul class="strokes">
+            <li>heel circ ulnar eff</li>
+            <li>alt squeeze eff</li>
+            <li>knuckle eff</li>
+            <li>x-fiber</li>
+            <li>ball deep friction</li>
+            <li>thrusting knuckle</li>
+            <li>5th metatarsal</li>
+            <li class="key">stretch</li>
+          </ul>
+        </div>
+
+        <!-- Leg -->
+        <div class="card">
+          <div class="card-head">
+            <h3>Leg <span style="font-weight:400;color:var(--muted);font-size:0.85rem;">(general)</span></h3>
+            <span class="time-badge">4 min · ×2</span>
+          </div>
+          <div class="group">
+            <div class="group-label">Lower</div>
+            <ul class="strokes">
+              <li>gastroc</li>
+              <li>open C</li>
+              <li>ocean waves</li>
+              <li>eff</li>
+            </ul>
+          </div>
+          <div class="group">
+            <div class="group-label">Upper</div>
+            <ul class="strokes">
+              <li>forearm eff</li>
+              <li>knuckles</li>
+              <li>ocean waves</li>
+              <li>eff</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Glute -->
+        <div class="card">
+          <div class="card-head">
+            <h3>Glute</h3>
+            <span class="time-badge">1.5 min · ×2</span>
+          </div>
+          <ul class="strokes">
+            <li>IT band</li>
+            <li>iliac crest small cir</li>
+            <li>alt knuckle compression</li>
+            <li>forearm comp w/ rotation</li>
+          </ul>
+        </div>
+
+        <!-- Back (wide) -->
+        <div class="card wide">
+          <div class="card-head">
+            <h3>Back</h3>
+            <span class="time-badge">15 min</span>
+          </div>
+
+          <div class="group">
+            <div class="group-label">General</div>
+            <ul class="strokes">
+              <li>alt compression on shoulders</li>
+              <li>ulnar eff</li>
+              <li>butterfly eff</li>
+            </ul>
+          </div>
+
+          <div class="group">
+            <div class="group-label">Specific</div>
+            <ul class="strokes">
+              <li>pivot</li>
+              <li>ribcage pull</li>
+              <li>pivot</li>
+              <li>eff</li>
+            </ul>
+          </div>
+
+          <div class="group">
+            <div class="group-label">Specific — Hand</div>
+            <ul class="strokes">
+              <li>eff w/ pull</li>
+              <li>x-fiber</li>
+              <li>spreading</li>
+              <li>twisting knuckle</li>
+              <li>deep friction</li>
+            </ul>
+          </div>
+
+          <div class="group">
+            <div class="group-label">Specific — To Steel</div>
+            <ul class="strokes">
+              <li>low</li>
+              <li>lateral palm eff</li>
+              <li>V's</li>
+              <li>petrissage</li>
+              <li>spread circ</li>
+              <li>QL</li>
+            </ul>
+          </div>
+
+          <div class="group">
+            <div class="group-label">Specific — To Back</div>
+            <ul class="strokes">
+              <li>ulnar eff scapula</li>
+              <li>scapular work</li>
+              <li class="key">return hand</li>
+            </ul>
+          </div>
+
+          <div class="group">
+            <div class="group-label">Close</div>
+            <ul class="strokes">
+              <li class="rep">specific ×2</li>
+              <li>general</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============== SUPINE ============== -->
+    <section class="position supine">
+      <div class="position-head">
+        <h2>Supine</h2>
+        <span class="dur">30 min</span>
+      </div>
+
+      <div class="regions">
+
+        <!-- Foot -->
+        <div class="card">
+          <div class="card-head">
+            <h3>Foot</h3>
+            <span class="time-badge">1 min · ×2</span>
+          </div>
+          <ul class="strokes">
+            <li>eff</li>
+            <li>bend toes + chucking</li>
+            <li>eff w/ toe twist</li>
+            <li>ankle circle</li>
+          </ul>
+        </div>
+
+        <!-- Leg -->
+        <div class="card">
+          <div class="card-head">
+            <h3>Leg</h3>
+            <span class="time-badge">3 min · ×2</span>
+          </div>
+          <ul class="strokes" style="margin-bottom:4px;">
+            <li>eff</li>
+          </ul>
+          <div class="group">
+            <div class="group-label">Lower</div>
+            <ul class="strokes">
+              <li>gastroc</li>
+              <li>above &amp; below</li>
+              <li>dragon mouth</li>
+              <li>palm hstn</li>
+              <li>t-fan</li>
+              <li>pulling</li>
+              <li>eff</li>
+            </ul>
+          </div>
+          <div class="group">
+            <div class="group-label">Upper</div>
+            <ul class="strokes">
+              <li>adductor</li>
+              <li>knuckles</li>
+              <li>pulling</li>
+              <li>ocean waves</li>
+              <li>eff</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Arm + Hand (wide) -->
+        <div class="card wide">
+          <div class="card-head">
+            <h3>Arm + Hand</h3>
+            <span class="time-badge">3 min · ×2</span>
+          </div>
+
+          <div class="group">
+            <div class="group-label">Open</div>
+            <ul class="strokes">
+              <li>eff</li>
+              <li>hand friction</li>
+              <li>alt eff w/ twist</li>
+            </ul>
+          </div>
+
+          <div class="group">
+            <div class="group-label">Lower</div>
+            <ul class="strokes">
+              <li>x-fiber forearm</li>
+              <li>turnover</li>
+              <li>petrissage</li>
+              <li>return arm</li>
+            </ul>
+          </div>
+
+          <div class="group">
+            <div class="group-label">Supporting Arm</div>
+            <ul class="strokes">
+              <li class="key">pivot to supporting arm</li>
+              <li>eff oval</li>
+              <li>strip elbow</li>
+              <li>knuckle eff</li>
+              <li>petrissage</li>
+            </ul>
+          </div>
+
+          <div class="group">
+            <div class="group-label">Close</div>
+            <ul class="strokes">
+              <li class="key">return arm</li>
+              <li>eff full arm</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Neck + Shoulder (wide) -->
+        <div class="card wide">
+          <div class="card-head">
+            <h3>Neck + Shoulder</h3>
+            <span class="time-badge">~3 min</span>
+          </div>
+
+          <div class="group">
+            <div class="group-label">General</div>
+            <ul class="strokes">
+              <li>alt compression</li>
+              <li>clavicle</li>
+              <li>reverse butterfly</li>
+            </ul>
+          </div>
+
+          <div class="group">
+            <div class="group-label">Specific</div>
+            <ul class="strokes">
+              <li class="key">turn head</li>
+              <li>eff SCM</li>
+              <li>soft knuckles</li>
+              <li>petrissage</li>
+              <li>eff</li>
+            </ul>
+          </div>
+
+          <div class="group">
+            <div class="group-label">Close</div>
+            <ul class="strokes">
+              <li class="key">transition</li>
+              <li>nose butterfly</li>
+              <li class="rep">specific ×2</li>
+              <li>reverse butterfly</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="page">
+      Memorization cheat sheet · eff = effleurage · cir = circle · x-fiber = cross-fiber
+    </footer>
+
+  </div>
+</body>
+
+</html>
