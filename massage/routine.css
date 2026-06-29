@@ -5,32 +5,32 @@
    ========================================================================= */
 
 :root {
-  --bg: #f4f6f5;
+  --bg: #f4f6f8;
   --surface: #ffffff;
-  --ink: #1b2420;
-  --ink-soft: #5d6b64;
-  --accent: #2f8f6f;
-  --accent-soft: #e3f1ea;
-  --accent-ink: #1d6b51;
-  --line: #e1e6e3;
-  --pill-bg: #eef2f0;
-  --pill-ink: #2b3a33;
+  --ink: #1b2430;
+  --ink-soft: #5d6675;
+  --accent: #2f6fbf;
+  --accent-soft: #e4edf8;
+  --accent-ink: #1d5294;
+  --line: #e1e5ea;
+  --pill-bg: #eef1f6;
+  --pill-ink: #2b333d;
   --radius: 14px;
-  --shadow: 0 1px 3px rgba(20, 40, 30, 0.08), 0 6px 18px rgba(20, 40, 30, 0.05);
+  --shadow: 0 1px 3px rgba(20, 30, 45, 0.08), 0 6px 18px rgba(20, 30, 45, 0.05);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #12150f;
-    --surface: #1c211b;
-    --ink: #e7ece8;
-    --ink-soft: #9aa79f;
-    --accent: #5fc99e;
-    --accent-soft: #1f3a30;
-    --accent-ink: #8fe0bd;
-    --line: #2c332b;
-    --pill-bg: #283027;
-    --pill-ink: #d7e0da;
+    --bg: #0f1318;
+    --surface: #1b2128;
+    --ink: #e7ebf0;
+    --ink-soft: #9aa3b0;
+    --accent: #5fa3e0;
+    --accent-soft: #1f2f40;
+    --accent-ink: #8fc2ea;
+    --line: #2c333d;
+    --pill-bg: #28303a;
+    --pill-ink: #d7dee6;
     --shadow: none;
   }
 }
@@ -192,6 +192,19 @@ footer.note {
   color: var(--ink-soft);
   font-size: 0.78rem;
   text-align: center;
+}
+
+/* ---- Larger, more readable text on phones -------------------------------
+   Bumps the on-screen study sizes ~2pt. Desktop (>=820px) and print keep
+   their own sizes, so this only affects small screens. */
+@media (max-width: 819px) {
+  .masthead h1 { font-size: 1.6rem; }
+  .position__head .name { font-size: 1.2rem; }
+  .position__head .time { font-size: 0.95rem; }
+  .region__head .name { font-size: 1.12rem; }
+  .region__head .time { font-size: 0.85rem; }
+  .pill { font-size: 0.95rem; padding: 0.34rem 0.66rem; }
+  .subgroup__label { font-size: 0.82rem; }
 }
 
 /* =========================================================================
