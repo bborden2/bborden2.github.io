@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#2f8f6f" />
+  <title>50 Min Relaxation Massage Routine</title>
+  <link rel="stylesheet" href="routine.css" />
+</head>
+<body>
+  <div class="wrap">
+    <a class="back-link" href="index.html">&larr; All routines</a>
+    <header class="masthead">
+      <h1 data-title>50 Min Relaxation Massage Routine</h1>
+      <p class="subtitle" data-subtitle>50 minutes &middot; Prone 30 &middot; Supine 20</p>
+    </header>
+    <main class="routine" id="routine"></main>
+  </div>
+  <footer class="note">Tip: use your browser&rsquo;s Print to save or print on one page.</footer>
+
+  <script src="routine.js"></script>
+  <script>
+    const routine = {
+      title: "50 Min Relaxation Massage Routine",
+      subtitle: "50 minutes · Prone 30 · Supine 20",
+      positions: [
+        {
+          name: "Prone",
+          time: "30 min",
+          regions: [
+            {
+              name: "Foot",
+              time: "2 min ×2",
+              items: [
+                "Heel circle ulnar effleurage",
+                "Alternate squeeze effleurage",
+                "Knuckle effleurage",
+                "Cross-fiber",
+                "Ball deep friction",
+                "Twisting knuckles",
+                "5th metatarsal",
+                "Stretch"
+              ]
+            },
+            {
+              name: "Leg",
+              time: "4 min ×2",
+              items: [
+                "General effleurage",
+                { group: "Lower", items: ["Gastroc", "Open C Petrissage", "Ocean waves", "Effleurage"] },
+                { group: "Upper", items: ["Forearm effleurage", "Kuckes", "Ocean waves", "Effleurage"] }
+              ]
+            },
+            {
+              name: "Glute",
+              time: "1.5 min ×2",
+              items: [
+                "IT band",
+                "Iliac crest small circle friction",
+                "Alternating knuckle compression",
+                "Forearm compression with leg rotation"
+              ]
+            },
+            {
+              name: "Back",
+              time: "15 min",
+              items: [
+                "Alternating compression on shoulders",
+                { group: "General", items: ["Ulnar effleurage", "Butterfly effleurage"] },
+                {
+                  group: "Specific",
+                  items: [
+                    "Pivot; ribcage pull",
+                    "Pivot; effleurage",
+                    { group: "Hand", items: ["Effleurage with finger twist", "Cross-fiber", "Spreading", "Twisting knuckles", "Deep friction"] },
+                    { group: "Hand to stool", items: ["Low, lateral palmar effleurage", "V - spine", "Petrissage", "Spread erector / QL"] },
+                    { group: "Hand to back", items: ["Ulnar effleurage scapula", "Scapula work", "Return hand"] }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: "Supine",
+          time: "20 min",
+          regions: [
+            {
+              name: "Foot",
+              time: "1 min ×2",
+              items: [
+                "Effleurage",
+                "Bend toes, chucking",
+                "Effleurage with toe twist",
+                "Ankle circle"
+              ]
+            },
+            {
+              name: "Leg",
+              time: "3 min ×2",
+              items: [
+                { group: "Lower", items: ["Gastroc above", "Gastroc below", "Dragon mouth", "Palm tibia", "Cross-fiber", "Fulling", "Rainbow"] },
+                { group: "Upper", items: ["Adductor w/ forearm", "Knuckles", "Fulling", "Ocean waves", "effleurage"] }
+              ]
+            },
+            {
+              name: "Arm + Hand",
+              time: "3 min ×2",
+              items: [
+                "Effleurage",
+                "Hand spreading",
+                "Alternating effleurage with twist",
+                { group: "Forearm", items: ["Effleurage", "Cross-fiber forearm", "Turn arm + Pettrisage"] },
+                { group: "Pivot to supporting arm", items: ["Oval effleurage", "Strip elbow", "Kuckle effleurage", "Pettrisage"] },
+                "Return arm to table – full effluerage"
+              ]
+            },
+            {
+              name: "Neck + Shoulders",
+              time: "4 min",
+              items: [
+                "Alternating compression",
+                "Clavicle",
+                "Reverse butterfly",
+                { group: "Specific", items: ["Turn head – effleurage SCM", "Soft knuckles with rotation", "Pettrisage", "effleurage"] }
+              ]
+            },
+            {
+              name: "Scalp",
+              time: "2 min",
+              items: ["Friction"]
+            }
+          ]
+        }
+      ]
+    };
+    renderRoutine(routine);
+  </script>
+</body>
+</html>
